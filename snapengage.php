@@ -101,16 +101,16 @@ function snapengage_options_do_page() {
 }
 
 /**
- * Javascripts (Load in footer)
+ * Remote Javascript
  */
-function snap_javascripts() {
+function snapengage_remote_js() {
   wp_enqueue_script('snapengage', 'http://www.snapengage.com/snapabug.js', false, null, true);
 }
 
 /**
  * Footer script
  */
-function snapengage_footer_js() {
+function snapengage_js() {
   $snapengage_options = get_option('snapengage');
   print "<script type='text/javascript'>";
   switch ($snapengage_options['button_type']) {
@@ -130,6 +130,6 @@ function snapengage_footer_js() {
  * When not in Admin load scripts
  */
 if (!is_admin()) {
-  add_action('wp_print_scripts', 'snap_javascripts', 20);
-  add_action('wp_footer', 'snapengage_footer_js', 30);
+  add_action('wp_print_scripts', 'snapengage_remote_js', 20);
+  add_action('wp_footer', 'snapengage_js', 30);
 }
