@@ -23,17 +23,14 @@ function snapengage_options_init(){
 register_activation_hook(__FILE__, 'snapengage_defaults');
 function snapengage_defaults()
 {
-  $options = array(
+  $defaults = array(
+    'api_key'      => '',
     'button_type'  => 0,
     'position'     => 0,
     'offset'       => '55',
     'offset_units' => '%',
-  );
-  
-  foreach ( $options as $k => $v )
-  {
-    update_option($k, $v);
-  }    
+  );  
+  update_option( 'snapengage', $defaults );
 }
 
 /**
