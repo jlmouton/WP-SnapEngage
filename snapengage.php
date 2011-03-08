@@ -119,10 +119,10 @@ function snapengage_js() {
       print "SnapABug.init('".$snapengage_options['api_key']."');";
       break;
     case 1:
-      print "SnapABug.addButton('".$snapengage_options['api_key']."', ".$snapengage_options['position'].", '".$snapengage_options['offset']."".$snapengage_options['offset_units']."', true);";
+      print "SnapABug.addButton('".$snapengage_options['api_key']."', '".$snapengage_options['position']."', '".$snapengage_options['offset']."".$snapengage_options['offset_units']."', true);";
       break;
     case 0:
-      print "SnapABug.addButton('".$snapengage_options['api_key']."', ".$snapengage_options['position'].", '".$snapengage_options['offset']."".$snapengage_options['offset_units']."');";
+      print "SnapABug.addButton('".$snapengage_options['api_key']."', '".$snapengage_options['position']."', '".$snapengage_options['offset']."".$snapengage_options['offset_units']."');";
   }
   print "</script>";
 }
