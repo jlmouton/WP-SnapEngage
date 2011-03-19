@@ -104,8 +104,8 @@ function snapengage_options_do_page() {
  * Remote Javascript
  */
 function snapengage_remote_js() {
-  $s = ''; if ($_SERVER["HTTPS"] == "on") $s = 's';
-  wp_enqueue_script('snapengage', "http$s://www.snapengage.com/snapabug.js", false, null, true);
+  $s = 'http://www.snapengage.com'; if ($_SERVER["HTTPS"] == "on") $s = 'https://snapengage.appspot.com';
+  wp_enqueue_script('snapengage', "$s/snapabug.js", false, null, true);
 }
 
 /**
