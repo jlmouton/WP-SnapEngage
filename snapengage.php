@@ -29,6 +29,8 @@ function snapengage_defaults()
     'position'     => 0,
     'offset'       => '55',
     'offset_units' => '%',
+    'show_screenshot' => true,
+    'allow_offline' => true
   );  
   update_option( 'snapengage', $defaults );
 }
@@ -91,6 +93,18 @@ function snapengage_options_do_page() {
             </select> from the top
           </td>
         </tr>
+        <tr valign="top"><th scope="row">Show Screenshot Option?</th>
+            <td>
+                <input name="snapengage[show_screenshot]" <?php selected( $options['show_screenshot'], 1) ?> type="radio">Yes
+				<input name="snapengage[show_screenshot]" <?php selected( $options['show_screenshot'], 0) ?> type="radio">No
+            </td>
+         </tr>
+        <tr valign="top"><th scope="row">Allow Offline Engagement?</th>
+            <td>
+                <input name="snapengage[allow_offline]" <?php selected( $options['allow_offline'], 1) ?> type="radio">Yes
+				<input name="snapengage[allow_offline]" <?php selected( $options['allow_offline'], 0) ?> type="radio">No
+            </td>
+         </tr>
       </table>
       <p class="submit">
         <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
@@ -124,6 +138,15 @@ function snapengage_js() {
     case 0:
       print "SnapABug.addButton('".$snapengage_options['api_key']."', '".$snapengage_options['position']."', '".$snapengage_options['offset']."".$snapengage_options['offset_units']."');";
   }
+  
+  if (!$snapengage_options['show_screenshot']) {
+      print 'SnapABug.showScreenshotOption(false)';
+  }
+  
+  if (!$snapengage_options['allow_offline']) {
+      print 'SnapABug.allowOffline(false)';
+  }
+   
   print "</script>";
 }
 
