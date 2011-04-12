@@ -95,14 +95,18 @@ function snapengage_options_do_page() {
         </tr>
         <tr valign="top"><th scope="row">Show Screenshot Option?</th>
             <td>
-                <input name="snapengage[show_screenshot]" <?php selected( $options['show_screenshot'], 1) ?> type="radio">Yes
-				<input name="snapengage[show_screenshot]" <?php selected( $options['show_screenshot'], 0) ?> type="radio">No
+                <select name="snapengage[show_screenshot]">
+                  <option value='1' <?php selected( $options['show_screenshot'], 1 ); ?>>Yes</option>
+                  <option value='0' <?php selected( $options['show_screenshot'],0 ); ?>>No</option>
+                </select>
             </td>
          </tr>
         <tr valign="top"><th scope="row">Allow Offline Engagement?</th>
             <td>
-                <input name="snapengage[allow_offline]" <?php selected( $options['allow_offline'], 1) ?> type="radio">Yes
-				<input name="snapengage[allow_offline]" <?php selected( $options['allow_offline'], 0) ?> type="radio">No
+                <select name="snapengage[allow_offline]">
+                  <option value='1' <?php selected( $options['allow_offline'], 1 ); ?>>Yes</option>
+                  <option value='0' <?php selected( $options['allow_offline'],0 ); ?>>No</option>
+                </select>
             </td>
          </tr>
       </table>
@@ -140,11 +144,11 @@ function snapengage_js() {
   }
   
   if (!$snapengage_options['show_screenshot']) {
-      print 'SnapABug.showScreenshotOption(false)';
+      print 'SnapABug.showScreenshotOption(false);';
   }
   
   if (!$snapengage_options['allow_offline']) {
-      print 'SnapABug.allowOffline(false)';
+      print 'SnapABug.allowOffline(false);';
   }
    
   print "</script>";
