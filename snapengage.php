@@ -6,7 +6,7 @@ Description: Enables SnapEngage on your web site.
 Version: 1.0
 Author: Phill Kenoyer - Orange Room Software
 Author URI: http://www.OrangeRoomSoftware.com/
-License: Public Domain
+License: BSD
 */
 
 /**
