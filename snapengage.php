@@ -31,7 +31,7 @@ function snapengage_defaults()
     'offset_units' => '%',
     'show_screenshot' => true,
     'allow_offline' => true
-  );  
+  );
   update_option( 'snapengage', $defaults );
 }
 
@@ -40,12 +40,12 @@ function snapengage_defaults()
  */
 add_action( 'admin_menu', 'snapengage_options_add_page' );
 function snapengage_options_add_page() {
-	add_options_page(
-	  'SnapEngage Options',
-	  'SnapEngage',
-	  'manage_options',
-	  'snapengage_options',
-	  'snapengage_options_do_page');
+  add_options_page(
+    'SnapEngage Options',
+    'SnapEngage',
+    'manage_options',
+    'snapengage_options',
+    'snapengage_options_do_page');
 }
 
 /**
@@ -142,15 +142,15 @@ function snapengage_js() {
     case 0:
       print "SnapABug.addButton('".$snapengage_options['api_key']."', '".$snapengage_options['position']."', '".$snapengage_options['offset']."".$snapengage_options['offset_units']."');";
   }
-  
+
   if (!$snapengage_options['show_screenshot']) {
       print 'SnapABug.showScreenshotOption(false);';
   }
-  
+
   if (!$snapengage_options['allow_offline']) {
       print 'SnapABug.allowOffline(false);';
   }
-   
+
   print "</script>";
 }
 
