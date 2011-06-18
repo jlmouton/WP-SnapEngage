@@ -1,11 +1,11 @@
-=== Plugin Name ===
+=== WP SnapEngage ===
 Contributors: phillkenoyer
 Tags: snapengage, chat
 Requires at least: 3.0.0
 Tested up to: 3.1.3
 Stable Tag: Trunk
 
-SnapEngage WordPress Plugin
+SnapEngage Live Chat WordPress Plugin
 
 == Description ==
 
@@ -14,9 +14,8 @@ system.
 
 You will need an account with SnapEngage.  Go to http://www.snapengage.com/
 
-Once you are signed up, copy the API key from the "Get the code" page.  You
-can then setup the configuration options for this plugin and start using
-SnapEngage Live Chat on your WordPress website.
+You can then setup the configuration options for this plugin and start
+using SnapEngage Live Chat on your WordPress website.
 
 == Installation ==
 
