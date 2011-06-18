@@ -59,9 +59,10 @@ function snapengage_options_do_page() {
       <?php settings_fields('snapengage_options'); ?>
       <?php $options = get_option('snapengage'); ?>
       <table class="form-table">
-        <tr valign="top"><th scope="row">API Key</th>
+        <tr valign="top"><th scope="row">Widget ID</th>
           <td>
             <input type="text" name="snapengage[api_key]" size="55" maxlength="100" value="<?php echo $options['api_key']; ?>" />
+            <br /><a target="_blank" href="http://www.snapengage.com/getwidgetid">Find your SnapEngage widget ID here</a>
           </td>
         </tr>
         <tr><td><br/></td></tr>
