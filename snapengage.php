@@ -52,7 +52,7 @@ function snapengage_options_add_page() {
  * Draw the options page
  */
 function snapengage_options_do_page() {
-  ?>
+?>
   <div class="wrap">
     <h2>SnapEngage Options</h2>
     <form method="post" action="options.php">
@@ -104,7 +104,7 @@ function snapengage_options_do_page() {
         <tr valign="top"><th scope="row">Allow Offline Engagement?</th>
             <td>
                 <select name="snapengage[allow_offline]">
-                  <option value='1' <?php selected( $options['allow_offline'], 1 ); ?>>Yes</option>
+                  <option value='1' <?php selected( $options['allow_offline'],1 ); ?>>Yes</option>
                   <option value='0' <?php selected( $options['allow_offline'],0 ); ?>>No</option>
                 </select>
             </td>
@@ -122,7 +122,7 @@ function snapengage_options_do_page() {
  * Remote Javascript
  */
 function snapengage_remote_js() {
-  $s = 'http://www.snapengage.com'; if ($_SERVER["HTTPS"] == "on") $s = 'https://snapengage.appspot.com';
+  $s = 'http://www.snapengage.com'; if ($_SERVER['SERVER_PORT']==443) $s = 'https://snapabug.appspot.com';
   wp_enqueue_script('snapengage', "$s/snapabug.js", false, null, true);
 }
 
